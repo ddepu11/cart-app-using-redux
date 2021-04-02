@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cart-app-using-redux/static/css/main.4ec4eed1.chunk.css",
-    "main.js": "/cart-app-using-redux/static/js/main.4e775cd6.chunk.js",
-    "main.js.map": "/cart-app-using-redux/static/js/main.4e775cd6.chunk.js.map",
+    "main.css": "/cart-app-using-redux/static/css/main.a4df135d.chunk.css",
+    "main.js": "/cart-app-using-redux/static/js/main.a322ce00.chunk.js",
+    "main.js.map": "/cart-app-using-redux/static/js/main.a322ce00.chunk.js.map",
     "runtime-main.js": "/cart-app-using-redux/static/js/runtime-main.acbfd2bc.js",
     "runtime-main.js.map": "/cart-app-using-redux/static/js/runtime-main.acbfd2bc.js.map",
-    "static/js/2.e649a2a3.chunk.js": "/cart-app-using-redux/static/js/2.e649a2a3.chunk.js",
-    "static/js/2.e649a2a3.chunk.js.map": "/cart-app-using-redux/static/js/2.e649a2a3.chunk.js.map",
+    "static/js/2.871a2496.chunk.js": "/cart-app-using-redux/static/js/2.871a2496.chunk.js",
+    "static/js/2.871a2496.chunk.js.map": "/cart-app-using-redux/static/js/2.871a2496.chunk.js.map",
     "index.html": "/cart-app-using-redux/index.html",
-    "static/css/main.4ec4eed1.chunk.css.map": "/cart-app-using-redux/static/css/main.4ec4eed1.chunk.css.map",
-    "static/js/2.e649a2a3.chunk.js.LICENSE.txt": "/cart-app-using-redux/static/js/2.e649a2a3.chunk.js.LICENSE.txt"
+    "static/css/main.a4df135d.chunk.css.map": "/cart-app-using-redux/static/css/main.a4df135d.chunk.css.map",
+    "static/js/2.871a2496.chunk.js.LICENSE.txt": "/cart-app-using-redux/static/js/2.871a2496.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.acbfd2bc.js",
-    "static/js/2.e649a2a3.chunk.js",
-    "static/css/main.4ec4eed1.chunk.css",
-    "static/js/main.4e775cd6.chunk.js"
+    "static/js/2.871a2496.chunk.js",
+    "static/css/main.a4df135d.chunk.css",
+    "static/js/main.a322ce00.chunk.js"
   ]
 }
