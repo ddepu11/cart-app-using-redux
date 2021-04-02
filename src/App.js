@@ -4,13 +4,17 @@ import Items from "./Components/Items";
 import Summary from "./Components/Summary";
 import { FaShoppingCart } from "react-icons/fa";
 import { getCartItems } from "./actions/item";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+
+  const cart = useSelector((state) => state.cart);
+  const loading = useSelector((state) => state.loading);
+
   useEffect(() => {
     dispatch(getCartItems());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container grid">
@@ -30,12 +34,13 @@ function App() {
       <Summary />
 
       <footer className="footer flex">
-        {/* {loading === false &&
-        (cart.length === 0 ? (
-          ""
-        ) : (
-          <button onClick={clearAll}>Clear All</button>
-        ))} */}
+        {loading === false &&
+          (cart.length === 0 ? (
+            ""
+          ) : (
+            // onClick={clearAll}
+            <button>Clear All</button>
+          ))}
       </footer>
     </div>
   );

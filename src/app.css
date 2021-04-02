@@ -154,7 +154,7 @@ input:focus {
   transition: all 0.25s ease-in-out;
 }
 .item img:hover {
-  transform: scale(5) translateX(30px);
+  transform: scale(3.5) translateX(30px);
 }
 .item h6 {
   font-size: 0.9em;
@@ -340,7 +340,7 @@ footer button:hover {
     font-size: 1.3em;
   }
   .item img:hover {
-    transform: scale(4) translateX(20px);
+    transform: scale(2) translateX(10px);
   }
 }
 @media (max-width: 400px) {
