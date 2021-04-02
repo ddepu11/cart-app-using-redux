@@ -2,7 +2,11 @@ import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
 import { useSelector, useDispatch } from "react-redux";
-import { increaseHowMany, decreaseHowMany } from "../actions/item";
+import {
+  increaseHowMany,
+  decreaseHowMany,
+  removeCartItem,
+} from "../actions/item";
 
 const Items = () => {
   const dispatch = useDispatch();
@@ -45,7 +49,7 @@ const Items = () => {
               <span>&#8377;{price}</span>
               <ImBin
                 className="bin pointer"
-                // onClick={() => removeCartItem(id)}
+                onClick={() => dispatch(removeCartItem(id, cart))}
               />
             </div>
           );

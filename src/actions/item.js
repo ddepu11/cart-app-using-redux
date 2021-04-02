@@ -4,9 +4,9 @@ import {
   CLEAR_CART,
   INCREASE_ITEM_COUNT,
   DECREASE_ITEM_COUNT,
+  REMOVE_ITEM,
+  COUNT_TOTAL,
 } from "../constant";
-
-import { useSelector } from "react-redux";
 
 const getCartItems = () => async (dispatch) => {
   try {
@@ -47,4 +47,37 @@ const decreaseHowMany = (id, cart) => (dispatch) => {
   dispatch({ type: DECREASE_ITEM_COUNT, payload: newCart });
 };
 
-export { getCartItems, clearCart, increaseHowMany, decreaseHowMany };
+const removeCartItem = (id, cart) => (dispatch) => {
+  const newCart = cart.filter((item) => item.id !== id);
+  dispatch({ type: REMOVE_ITEM, payload: newCart });
+};
+
+const getSummary = (cart) => (dispatch) => {
+  const { noOfItems, orderTotal } = cart.reduce(
+    (cartTotal, item) => {
+      let totalItems = item.howMany;
+      let orTotal = item.howMany * item.price;
+
+      return {
+        noOfItems: totalItems + cartTotal.noOfItems,
+        orderTotal: orTotal + cartTotal.orderTotal,
+      };
+    },
+    {
+      noOfItems: 0,
+      orderTotal: 0,
+    }
+  );
+  console.log({ noOfItems, orderTotal });
+
+  dispatch({ type: COUNT_TOTAL, payload: { noOfItems, orderTotal } });
+};
+
+export {
+  getCartItems,
+  clearCart,
+  increaseHowMany,
+  decreaseHowMany,
+  removeCartItem,
+  getSummary,
+};

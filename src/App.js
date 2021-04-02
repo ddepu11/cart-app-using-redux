@@ -3,7 +3,7 @@ import "./app.css";
 import Items from "./Components/Items";
 import Summary from "./Components/Summary";
 import { FaShoppingCart } from "react-icons/fa";
-import { clearCart, getCartItems } from "./actions/item";
+import { clearCart, getCartItems, getSummary } from "./actions/item";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
@@ -12,8 +12,12 @@ function App() {
   const { cart, loading, noOfItems } = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(getCartItems());
+    dispatch(getCartItems(cart));
   }, []);
+
+  useEffect(() => {
+    dispatch(getSummary(cart));
+  }, [cart]);
 
   return (
     <div className="container grid">

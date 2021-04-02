@@ -4,6 +4,8 @@ import {
   CLEAR_CART,
   INCREASE_ITEM_COUNT,
   DECREASE_ITEM_COUNT,
+  REMOVE_ITEM,
+  COUNT_TOTAL,
 } from "../constant";
 
 const initialState = {
@@ -49,6 +51,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: action.payload,
+      };
+    case REMOVE_ITEM:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+    case COUNT_TOTAL:
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;
