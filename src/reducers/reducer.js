@@ -1,4 +1,10 @@
-import { SET_LOADING, LOAD_CART, CLEAR_CART } from "../constant";
+import {
+  SET_LOADING,
+  LOAD_CART,
+  CLEAR_CART,
+  INCREASE_ITEM_COUNT,
+  DECREASE_ITEM_COUNT,
+} from "../constant";
 
 const initialState = {
   cart: [],
@@ -24,6 +30,25 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [],
+      };
+
+    case INCREASE_ITEM_COUNT:
+      let newCart = state.cart.map((item) => {
+        if (action.payload === item.id) {
+          item.howMany++;
+        }
+
+        return item;
+      });
+      return {
+        ...state,
+        cart: newCart,
+      };
+
+    case DECREASE_ITEM_COUNT:
+      return {
+        ...state,
+        cart: action.payload,
       };
     default:
       return state;

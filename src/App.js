@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCartItems());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="container grid">
@@ -37,7 +37,6 @@ function App() {
           (cart.length === 0 ? (
             ""
           ) : (
-            //
             <button onClick={() => dispatch(clearCart())}>Clear All</button>
           ))}
       </footer>

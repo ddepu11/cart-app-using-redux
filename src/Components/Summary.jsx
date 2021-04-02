@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 const Summary = () => {
   const shipCh = 200;
   const { loading, orderTotal } = useSelector((state) => state);

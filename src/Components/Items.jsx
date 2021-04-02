@@ -1,10 +1,13 @@
 import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { increaseHowMany, decreaseHowMany } from "../actions/item";
+
 const Items = () => {
-  const cart = useSelector((state) => state.cart);
-  const loading = useSelector((state) => state.loading);
+  const dispatch = useDispatch();
+  const { cart, loading } = useSelector((state) => state);
+
   return (
     <aside className="items">
       {loading ? (
@@ -25,14 +28,18 @@ const Items = () => {
               <div className="buttons-div flex">
                 <FaMinus
                   className="minus pointer"
-                  // onClick={() => decreaseHowMany(id)}
+                  onClick={() => {
+                    dispatch(decreaseHowMany(id, cart));
+                  }}
                 />
 
                 <span>{howMany}</span>
 
                 <FaPlus
                   className="plus pointer"
-                  // onClick={() => increaseHowMany(id)}
+                  onClick={() => {
+                    dispatch(increaseHowMany(id));
+                  }}
                 />
               </div>
               <span>&#8377;{price}</span>
