@@ -1,11 +1,12 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const Summary = () => {
   const shipCh = 200;
+  const { loading, orderTotal } = useSelector((state) => state);
+
   return (
     <section className="summary">
-      Summary
-      {/* {loading ? (
+      {loading ? (
         <h1 className="l">Loading...</h1>
       ) : (
         <>
@@ -27,7 +28,7 @@ const Summary = () => {
             <button>Checkout Items</button>
           </div>
         </>
-      )} */}
+      )}
     </section>
   );
 };

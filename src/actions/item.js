@@ -1,5 +1,5 @@
 import { fetchCartItems } from "../api/index";
-import { LOAD_CART } from "../constant";
+import { LOAD_CART, CLEAR_CART } from "../constant";
 
 const getCartItems = () => async (dispatch) => {
   try {
@@ -12,5 +12,7 @@ const getCartItems = () => async (dispatch) => {
     console.log(error.message);
   }
 };
-
-export { getCartItems };
+const clearCart = () => (dispatch) => {
+  dispatch({ type: CLEAR_CART });
+};
+export { getCartItems, clearCart };
