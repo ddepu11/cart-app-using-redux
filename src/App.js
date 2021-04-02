@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./app.css";
 import Items from "./Components/Items";
 import Summary from "./Components/Summary";
 import { FaShoppingCart } from "react-icons/fa";
+import { getCartItems } from "./actions/item";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, []);
+
   return (
     <div className="container grid">
       <header className="header flex">

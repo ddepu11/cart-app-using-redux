@@ -1,0 +1,4 @@
+const SET_LOADING = "SET_LOADING";
+const LOAD_CART = "LOAD_CART";
+
+export { SET_LOADING, LOAD_CART };
